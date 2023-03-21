@@ -9,7 +9,7 @@ pipeline {
         stage('run sh') {
             steps {
                 echo "Test how to run a sh file"
-                bash helloworld.sh
+                sh helloworld.sh
             }
         }
     }
