@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo "Test how to run a sh file"
                 echo "hello world"
+                echo "good bye"
             }
         }
     }
