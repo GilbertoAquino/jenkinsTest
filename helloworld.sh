@@ -1,1 +1,2 @@
 echo "helloWorld"
+echo "goodbye!"
