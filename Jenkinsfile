@@ -20,7 +20,7 @@ pipeline {
                 echo "hello world"
                 script{
                     bat(script: "dir")
-                    bat(script: "python C:\\Users\\gilpi\\shake\\download.py --station "+station+" --date "+date+" --time "+time+" --delta "+duration)
+                    bat(script: "python C:\\Users\\gilpi\\shake\\download.py --station " + env.station+ " --date " + env.date + " --time " + env.time + " --delta " + env.duration)
                 }
             }
         }
