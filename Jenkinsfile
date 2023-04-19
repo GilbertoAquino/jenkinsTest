@@ -1,9 +1,10 @@
 pipeline {
     agent {label "Gilberto_PC"}
     parameters {
-      choice choices: ['DEVELOPMENT', 'STAGING', 'PRODUCTION'], description: 'Select an environment for deployment', name: 'ENVIRONMENT'
-      password defaultValue: '123ABC', description: 'Enter the API key', name: 'API_KEY'
-      string defaultValue: 'This is the changelog', description: 'Enter the changelog', name: 'CHANGELOG'
+      string defaultValue: 'RA1C9', description: 'Rasberry shake station name.', name: 'station'
+      string defaultValue: '2022-01-01', description: 'Write the date in format AAAA-MM-DD.', name: 'date'
+      string defaultValue: '00:00:00.0', description: 'Write the time in format HH:mm:SS.s', name: 'time'
+      string defaultValue: '1h', description: 'Write the duration of the trace.', name: 'duration'
     }
     stages {
         stage('run sh') {
@@ -19,7 +20,7 @@ pipeline {
                 echo "hello world"
                 script{
                     bat(script: "dir")
-                    bat(script: "python C:\\Users\\gilpi\\shake\\download.py")
+                    bat(script: "python C:\\Users\\gilpi\\shake\\download.py --station "+station+" --date "+date+" --time "+time+" --delta "+duration)
                 }
             }
         }
