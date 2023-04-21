@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "Gilberto_PC"}
+    agent any
     parameters {
       string defaultValue: 'RA1C9', description: 'Rasberry shake station name.', name: 'station'
       string defaultValue: '2022-01-01', description: 'Write the date in format AAAA-MM-DD.', name: 'date'
